@@ -1,0 +1,108 @@
+@use '/src/variables';
+
+/* slider We need to use ::ng-deep to overcome view encapsulation*/
+
+::ng-deep body > app-root > div > div > div.interactive > app-slider > div > div{
+  color: variables.$lilac-murmur;
+}
+.custom-ngx-slider {
+  height: 67px;
+  width: 311px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ margin-bottom: 40px;
+  padding: 5px;
+
+  // color: $lilac-murmur;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21px;
+
+}
+/* .ngx-slider {
+height: 67px;
+  width: 311px;
+} */
+.slider-label {
+  width: 311px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-label-value {
+  color: variables.$synthetic-mint;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42px;
+}
+
+/* .ngx-slider, .ngx-slider-selection{
+  color: $synthetic-mint;
+  visibility: visible !important;
+} */
+/* .ngx-slider .ngx-slider-pointer{
+  background-color: $lilac-murmur;
+} */
+
+::ng-deep.ngx-slider-span,
+.ngx-slider-pointer,
+.ngx-slider-pointer-min {
+  /* background-color: variables.$adventure-island-pink; */
+}
+
+.custom-ngx-slider,
+.ngx-slider,
+.ngx-slider-bar {
+  background-color: variables.$synthetic-mint;
+  /* height: 5px; */
+}
+::ng-deep.custom-ngx-slider.ngx-slider.ngx-slider-selection {
+  color: variables.$synthetic-mint;
+}
+
+.custom-ngx-slider .ngx-slider ::ng-deep.ngx-slider-pointer {
+  cursor: pointer;
+  z-index: 3;
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
+  top: -14px; /* to remove the default positioning */
+  /* bottom: 0; */
+  background-color: variables.$lilac-murmur;
+}
+.custom-ngx-slider:hover .ngx-slider ::ng-deep.ngx-slider-pointer {
+  border: 1px solid variables.$synthetic-mint;
+  background-color: variables.$river-styx;
+}
+
+::ng-deep.custom-ngx-slider .ngx-slider .ngx-slider-pointer:after {
+  display: none;
+}
+
+::ng-deep.custom-ngx-slider .ngx-slider .ngx-slider-bubble {
+  display: none;
+  bottom: 14px;
+}
+
+::ng-deep.custom-ngx-slider .ngx-slider .ngx-slider-limit {
+  font-weight: bold;
+  color: red;
+}
+
+::ng-deep.custom-ngx-slider .ngx-slider .ngx-slider-tick {
+  width: 3px;
+  height: 15px;
+  margin-left: 4px;
+  border-radius: 0;
+  background: variables.$synthetic-mint;
+  top: -1px;
+}
+
+.custom-ngx-slider,
+.ngx-slider,
+.ngx-slider-tick .ngx-slider-selected {
+  background: variables.$black-russian;
+}

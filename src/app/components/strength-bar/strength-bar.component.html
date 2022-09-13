@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="title">
+    <p>
+      Strength</p>
+  </div>
+  <div class="status">
+
+    <p>{{currentStrength}}</p>
+    <!-- strength bars -->
+    <div [ngSwitch]="currentStrength">
+      <!-- v weak -->
+      <div class="display"
+           *ngSwitchCase="'too weak!'">
+        <div class="bar v-weak"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <!-- weak -->
+      <div class="display"
+           *ngSwitchCase="'weak'">
+        <div class="bar weak"></div>
+        <div class="bar weak"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <!-- medium -->
+      <div class="display"
+           *ngSwitchCase="'medium'">
+        <div class="bar medium"></div>
+        <div class="bar medium"></div>
+        <div class="bar medium"></div>
+        <div class="bar"></div>
+      </div>
+      <!-- strong -->
+      <div class="display" *ngSwitchCase="'strong'">
+        <div class="bar strong"></div>
+        <div class="bar strong"></div>
+        <div class="bar strong"></div>
+        <div class="bar strong"></div>
+      </div>
+      <!-- default | empty input -->
+ <div class="display"
+           *ngSwitchDefault>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </div>
+</div>

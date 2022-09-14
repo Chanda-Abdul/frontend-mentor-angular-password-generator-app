@@ -6,6 +6,7 @@ h1 {
   text-align: center;
 
 }
+
 .password {
   height: 64px;
   width: 323px;
@@ -17,9 +18,10 @@ h1 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px ;
+  padding: 0 20px;
 }
-.icon{
+
+.icon {
   color: variables.$synthetic-mint;
 }
 
@@ -107,14 +109,6 @@ h1 {
 }
 
 
-
-
-
-
-
-
-
-
 /* button */
 button {
   margin: 25px;
@@ -128,8 +122,7 @@ button {
 }
 
 button:hover,
-button:active,
-button:focus {
+button:active {
   background-color: variables.$black-russian;
   color: variables.$synthetic-mint;
   border: 2px solid variables.$synthetic-mint;

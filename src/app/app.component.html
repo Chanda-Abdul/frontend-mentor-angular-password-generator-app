@@ -9,7 +9,7 @@
 
     <div class="interactive">
       <!-- slider -->
-      <app-slider></app-slider>
+      <app-slider (newCharValueEvent)="updateCharCount($event)"></app-slider>
 
       <!-- checkbox[ngModel]="upper(ngModelChange)="""
                  -->
@@ -17,37 +17,38 @@
         <label class="control control-checkbox">
           <input type="checkbox"
                  [checked]="upper"
-                 (change)="setUpperCase()" />Include Uppercase Letters
+                 (change)="upper = !upper; updateUI()" />Include Uppercase Letters
           <div class="control-indicator"></div>
         </label>
 
         <label class="control control-checkbox">
           <input type="checkbox"
                  [checked]="lower"
-                 (change)="setLowerCase()" />Include Lowercase Letters
+                 (change)="lower = !lower; updateUI()" />Include Lowercase Letters
           <div class="control-indicator"></div>
         </label>
 
         <label class="control control-checkbox">
           <input type="checkbox"
                  [checked]="number"
-                 (change)="setNumber()" />Include Numbers
+                 (change)="number = !number; updateUI()" />Include Numbers
           <div class="control-indicator"></div>
         </label>
         <label class="control control-checkbox">
           <input type="checkbox"
                  [checked]="symbol"
-                 (change)="setSymbol()" />Include Symbols
+                 (change)="symbol = !symbol; updateUI()" />Include Symbols
           <div class="control-indicator"></div>
         </label>
       </div>
 
       <!-- strength -->
-      <app-strength-bar></app-strength-bar>
+      <app-strength-bar [strength]="currentStrength"></app-strength-bar>
 
       <!-- button -->
 
-      <button> Generate <img src="/assets/images/icon-arrow-right.svg"
+      <button type="button"
+              (click)="generateNewPassword()"> Generate <img src="/assets/images/icon-arrow-right.svg"
              class="logo"></button>
     </div>
   </div>

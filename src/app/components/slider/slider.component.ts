@@ -1,5 +1,5 @@
 import { Options } from '@angular-slider/ngx-slider';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -7,9 +7,10 @@ import { Component, OnInit, Output } from '@angular/core';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnInit {
-  @Output() value: number = 10;
+  @Output() newCharValueEvent = new EventEmitter<number>();
+  value: number = 8;
   options: Options = {
-    floor: 0,
+    floor: 1,
     ceil: 20,
     step: 1,
     showTicks: false
@@ -19,6 +20,8 @@ export class SliderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  updateValue(value: number) {
+    this.newCharValueEvent.emit(value);
+  }
 
 }

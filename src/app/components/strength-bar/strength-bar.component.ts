@@ -1,11 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { StrengthUpdateService } from './strengthUpdate.service';
 // interface level {
 
 // }
 @Component({
   selector: 'app-strength-bar',
   templateUrl: './strength-bar.component.html',
-  styleUrls: ['./strength-bar.component.scss']
+  styleUrls: ['./strength-bar.component.scss'],
+  providers:[StrengthUpdateService]
 })
 
 export class StrengthBarComponent implements OnInit {

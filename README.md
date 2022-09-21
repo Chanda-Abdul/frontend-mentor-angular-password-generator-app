@@ -110,7 +110,7 @@ const proudOfThisFunc = () => {
 
 - [angular-range-slider-example-draggable-ngx-slider-tutorial](https://www.freakyjolly.com/angular-range-slider-example-draggable-ngx-slider-tutorial/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [ CSS Checkbox Generator](https://doodlenerd.com/html-control/css-checkbox-generator) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-- [angular-range-slider-example-draggable-ngx-slider-tutorial](https://www.freakyjolly.com/angular-range-slider-example-draggable-ngx-slider-tutorial/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Introduction to services and dependency injection](https://angular.io/guide/architecture-services) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [List of Unicode characters](https://en.wikipedia.org/wiki/List_of_Unicode_characters) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 - [angular-range-slider-example-draggable-ngx-slider-tutorial](https://www.freakyjolly.com/angular-range-slider-example-draggable-ngx-slider-tutorial/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.

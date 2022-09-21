@@ -1,11 +1,11 @@
 <div class="container">
   <div class="content">
     <h1>Password Generator </h1>
-    <div class="password">
-      <p>{{password.join("")}}</p>
-      <img src="/assets/images/icon-copy.svg"
-           class="icon">
-    </div>
+    <label for="clipboard-example-textarea">Text to be copied</label>[(ngModel)]="value"
+<textarea id="clipboard-example-textarea" class="password" cols="20" rows="1" >{{password.join("")}}</textarea>
+<button><img src="/assets/images/icon-copy.svg"
+  class="icon">Copy to clipboard</button> [cdkCopyToClipboard]="value"
+
 
     <div class="interactive">
       <!-- slider -->
@@ -17,27 +17,27 @@
         <label class="control control-checkbox">
           <input type="checkbox"
                  [checked]="upper"
-                 (change)="upper = !upper; updateUI()" />Include Uppercase Letters
+                 (change)="upper = !upper; updatestrength()" />Include Uppercase Letters
           <div class="control-indicator"></div>
         </label>
 
         <label class="control control-checkbox">
           <input type="checkbox"
                  [checked]="lower"
-                 (change)="lower = !lower; updateUI()" />Include Lowercase Letters
+                 (change)="lower = !lower; updatestrength()" />Include Lowercase Letters
           <div class="control-indicator"></div>
         </label>
 
         <label class="control control-checkbox">
           <input type="checkbox"
                  [checked]="number"
-                 (change)="number = !number; updateUI()" />Include Numbers
+                 (change)="number = !number; updatestrength()" />Include Numbers
           <div class="control-indicator"></div>
         </label>
         <label class="control control-checkbox">
           <input type="checkbox"
                  [checked]="symbol"
-                 (change)="symbol = !symbol; updateUI()" />Include Symbols
+                 (change)="symbol = !symbol; updatestrength()" />Include Symbols
           <div class="control-indicator"></div>
         </label>
       </div>

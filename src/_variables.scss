@@ -28,3 +28,10 @@ $soaked-in-sun: hsl(42, 91%, 68%);
   font-size: 18px;
   line-height: 23px;
 }
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

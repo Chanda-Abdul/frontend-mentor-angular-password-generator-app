@@ -10,21 +10,71 @@ h1 {
 .password {
   height: 64px;
   width: 323px;
-  color: variables.$lilac-murmur;
   background-color: variables.$black-russian;
-  color: variables.$lilac-murmur;
-  @include variables.heading-m;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  @include variables.flex-row;
   padding: 0 20px;
 }
 
-.icon {
+.password-text {
+  @include variables.heading-m;
+  color: variables.$lilac-murmur;
+
+}
+
+.empty {
+  opacity: .25;
+}
+
+.filled {
+  opacity: 1;
+}
+
+
+svg.copy-icon {
+  fill: variables.$synthetic-mint;
+  margin-left: 10px;
+}
+
+svg.copy-icon:hover {
+  fill: variables.$lilac-murmur;
+}
+
+.copy-btn {
+  @include variables.body-text;
+  @include variables.flex-row;
+  background-color: transparent;
+  border: none;
+
+}
+
+.copy-btn>div {
   color: variables.$synthetic-mint;
 }
 
+.copy-btn:hover>div,
+.copy-btn:hover>svg {
+  color: variables.$lilac-murmur;
+  fill: variables.$lilac-murmur;
+}
+
+/* button */
+.btn-primary {
+  margin: 25px;
+  width: 311px;
+  height: 56px;
+  border: 2px solid variables.$river-styx;
+  background-color: variables.$synthetic-mint;
+  color: variables.$river-styx;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: variables.$black-russian;
+  color: variables.$synthetic-mint;
+  border: 2px solid variables.$synthetic-mint;
+}
 
 .interactive {
   height: fit-content;
@@ -109,24 +159,7 @@ h1 {
 }
 
 
-/* button */
-button {
-  margin: 25px;
-  width: 311px;
-  height: 56px;
-  border: 2px solid variables.$river-styx;
-  background-color: variables.$synthetic-mint;
-  color: variables.$river-styx;
-  text-transform: uppercase;
-  font-size: 18px;
-}
 
-button:hover,
-button:active {
-  background-color: variables.$black-russian;
-  color: variables.$synthetic-mint;
-  border: 2px solid variables.$synthetic-mint;
-}
 
 /* Responsive Styles */
 /* @media screen and (max-width: 575px) {

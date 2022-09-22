@@ -40,6 +40,8 @@ export class PasswordGenerationService {
       password.push(this.availableChars[Math.floor(Math.random() * this.availableChars.length)]);
     }
     this.availableChars = [];
-    return password;
+    // console.log(password.join(''))
+    return password.join('');
+
   }
 }

@@ -25,7 +25,7 @@ This is a solution to the [Password generator app challenge on Frontend Mentor](
 Users should be able to:
 
 - [X] Generate a password based on the selected inclusion options
-- [ ] Copy the generated password to the computer's clipboard
+- [X] Copy the generated password to the computer's clipboard
 - [ ] See a strength rating for their generated password
 - [ ] View the optimal layout for the interface depending on their device's screen size
   - [ ] Mobile @ 375px
@@ -53,7 +53,7 @@ Users should be able to:
 ### Built with
 
 - <b>[Angular](https://angular.io/)</b> (<b>JavaScript</b> framework)
-  - [Angular Template Driven Forms](https://angular.io/guide/forms)
+  - [Angular Material](https://material.angular.io/)
   - [TypeScript](https://www.typescriptlang.org/)
   - [JavaScript](https://www.javascript.com/)
 - <b>[Sass](https://sass-lang.com/)/CSS</b> custom properties
@@ -112,7 +112,7 @@ const proudOfThisFunc = () => {
 - [ CSS Checkbox Generator](https://doodlenerd.com/html-control/css-checkbox-generator) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 - [Introduction to services and dependency injection](https://angular.io/guide/architecture-services) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [List of Unicode characters](https://en.wikipedia.org/wiki/List_of_Unicode_characters) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-- [angular-range-slider-example-draggable-ngx-slider-tutorial](https://www.freakyjolly.com/angular-range-slider-example-draggable-ngx-slider-tutorial/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Angular Material - Clipboard](https://material.angular.io/cdk/clipboard/overview) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 - [angular-range-slider-example-draggable-ngx-slider-tutorial](https://www.freakyjolly.com/angular-range-slider-example-draggable-ngx-slider-tutorial/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.

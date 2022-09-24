@@ -20,34 +20,129 @@ This is a solution to the [Password generator app challenge on Frontend Mentor](
 
 ## Overview
 
-### The challenge
+## The challenge
 
 Users should be able to:
 
 - [X] Generate a password based on the selected inclusion options
 - [X] Copy the generated password to the computer's clipboard
-- [ ] See a strength rating for their generated password
-- [ ] View the optimal layout for the interface depending on their device's screen size
-  - [ ] Mobile @ 375px
-  - [ ] Tablet @  px
-  - [ ] Desktop @ 1440px
-- [ ] See hover and focus states for all interactive elements on the page
-##
-### Screenshots
+- [X] See a strength rating for their generated password
+- [X] View the optimal layout for the interface depending on their device's screen size
+  - [X] Mobile @ 375px
+  - [X] Tablet @  768 px
+  - [X] Desktop @ 1440px
+- [X] See hover and focus states for all interactive elements on the page
+
+##  Screenshots
 
 - <b> Mobile View @ `375px`</b>
-- <b> Tablet View @ `375px`</b>
-- <b> Desktop View @ `1440px`</b>
+  - <b> `ngOnit` Initial Screen</b>
+  <img src="src/assets/screens/onInit.png" width="375" />
+   - <b> Valid Inputs</b>
+ <img src="src/assets/screens/inactive.png" width="375" />
+   - <b> Invalid Inputs and Error Messages</b>
+    <img src="src/assets/screens/error.png" width="375" />
+    - <b> with Button and  📑  icon Hover States</b>
+  <img src="src/assets/screens/active.png" width="375" />
+  - <b> with 📑 copy  </b>
+   <img src="src/assets/screens/clip.png" width="375" />
+ 
+- <b> Tablet View @ `768px`</b> && <b> Desktop View @ `1440px`</b>
+ <img src="src/assets/screens/desktop.png" width="768" />
 
-<!-- Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it. -->
 
-##
-### Links
+
+
+##  Links
 
 - Solution URL: [Add solution URL here](https://github.com/Chanda-Abdul/frontend-mentor-angular-password-generator-app)
-- <s>Live Site URL: [Add live site URL here](https://your-live-site-url.com)</s>
+- Live Site URL: [Add live site URL here](https://stalwart-alpaca-aa2da3.netlify.app/)
 
 ## My process
+This password generator was a fun and challenging to work on. great opportunity to use some new angular topics and implement some of algorithm knowledge.
+### Project Structure
+I also started this project with most of my finctionality in one component.  But as the codebase grew I decided it would be best to separate each interactive element into thier own component and service.  I ended up with
+- <b>App Component</b>
+  - [`<app-password-display>`]()
+    - <b>Component: </b>[`password-display.component.ts`](/src/app/components/password-display/password-display.component.ts)
+    - <b>Service: </b>[`passwordGeneration.service.ts`](/src/app/components/password-display/passwordGeneration.service.ts)
+    - handles the functionality for displaying the inital password, the generated password, and the clipboard(copy password) status.
+
+  - [`<app-slider>`](/src/app/components/slider/)
+      - <b>Component: </b>[`slider.component.ts`](/src/app/components/slider/slider.component.ts)
+    - <b>Service: </b>[`character-count.service.ts`](/src/app/components/slider/character-count.service.ts)
+    - slider to keep track of the character count from <b>1</b> to <b>20</b> characters long.
+ 
+  - [`<app-checkbox-options>`](/src/app/components/checkbox-options/)
+      - <b>Component: </b> [`checkbox-options.component.ts`](/src/app/components/checkbox-options/checkbox-options.component.ts)
+    - handles the `<input type="checkbox"/>` for the <b>lowercase</b>, <b>uppercase</b>, <b>number</b> and <b>symbol</b> password options
+  - [`<app-strength-bar>`](/src/app/components/strength-bar/)
+      - <b>Component: </b> [`strength-bar.component.ts`](/src/app/components/strength-bar/strength-bar.component.ts)
+    - <b>Service: </b>[`strengthUpdate.service.ts`](/src/app/components/strength-bar/strengthUpdate.service.ts)
+    - handles the functionality that determines the strength of the password based on the <b>lowercase</b>, <b>uppercase</b>, <b>number</b> and <b>symbol</b> password input options
+
+#### Password Algorithms
+I realized that I would need to create two separate algorithms,   one algorithm to generate a password and another algorithm to determine the passwords' strength.
+##### Password Generator Alogirthm
+
+  When I initially started to think of ways to generate a password I considered something like 
+  `.charCodeAt()`
+  but I thought that might be too complicated and inffecient
+
+  So I decided it would be best to create an array for each of the password options
+  ```js
+  upperChars: string[] =
+    ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+      'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+  lowerChars: string[] =
+    ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+      'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+  symbolChars: string[] =
+    ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '+'];
+
+  numChars: string[] =
+    ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+ ``` 
+ and based on the user input options an <b>Array</b> of `availableChars` would be created to generate the password
+ ```js
+ availableChars: string[] = [];
+
+ availableChars = [...upperChars, ...lowerChars, ...symbolChars, ...numChars];
+ ```
+ <b>Space Complexity:</b> 
+ - `upperChars` = <b>O(26)</b>
+ - `lowerChars` = <b>O(26)</b>
+ - `symbolChars` = <b>O(12)</b>
+ - `numChars`= <b>O(10)</b>
+ - ? `availableChars`= <b>O(1)</b>
+ - ?`currentCharCount`= <b>O(1)</b>
+ - ? `password`= <b>O(1)</b>
+
+ - <b>Total Space = O(77) or O(N)</b>
+
+<b>Time Complexity:</b>
+- choose a random available character in  `availableChars[]` for each length of the character length `currentCharCount`
+```js
+  setPassword(upper: boolean, lower: boolean, number: boolean, symbol: boolean) {
+    const currentCharCount = this.characterCountService.getCurrentCharacterCount()
+    ...
+    this.getAvailableChars(upper, lower, number, symbol)
+
+    const createPassword = []
+
+    for (let i = 1; i <= currentCharCount; i++) {
+      
+      createPassword
+        .push(this.availableChars[Math.floor(Math.random() * this.availableChars.length)]);
+    }
+    ...
+    
+  }
+```
+ - <b>Total Time = O(N)</b> because of the `for` loop 
+#### Password Strength Algorithm
 
 
 ### Built with
@@ -61,13 +156,34 @@ Users should be able to:
 - Semantic <b>HTML5</b> markup
 - <b>Figma</b>
 
-##
+## What I learned
 
-### What I learned
+- I used [Angular Material - Clipboard](https://material.angular.io/cdk/clipboard/overview) to copy the generated password the users clipboard. `setTimeout()` is to reset the styling 5 seconds after copying the password.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+  ```js
+  import { Clipboard } from '@angular/cdk/clipboard';
 
-To see how you can add code snippets, see below:
+  ...
+
+  passwordCopied = false;
+
+  ...
+
+  copyPasswordToClipboard(){
+      this.clipboard.copy(this.password);
+
+      this.passwordCopied = true;
+      
+      setTimeout(() => {
+        this.passwordCopied = false
+      }, 5000);
+    }
+  ```
+- @Input
+- @Output
+- Services
+- Event binding
+- algorithms
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
@@ -83,30 +199,13 @@ const proudOfThisFunc = () => {
 }
 ```
 
-##
-### Continued development
-<!-- 
-6-ish hours
-- [X] General Setup - 30 mins
-- [ ] Review Design files/create layout - 30 mins
+##  Continued development
 
-- [ ] create password functionality - Generate a password based on the selected inclusion options - 45 mins
-- [ ] Copy the generated password to the computer's clipboard - 45 mins
-- [ ] See a strength rating for their generated password - 1 hour
-- [ ] View the optimal layout for the interface depending on their device's screen size  - 45 mins
-  - [ ] Mobile @ 375px
-  - [ ] Desktop @ 1440px  - 30 mins
-- [ ] See hover and focus states for all interactive elements on the page  - 30 mins
-- [ ] Cleanup  - 30 mins
-- [ ] Deployment  - 30 mins
--->
+- finish slider styling
+- update strength level based on character length
 
-<!-- Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect. -->
 
-- [ ] 🔜 Deploy
-- [ ] 🔜 add animations
-##
-### Useful resources
+## Useful resources
 
 - [angular-range-slider-example-draggable-ngx-slider-tutorial](https://www.freakyjolly.com/angular-range-slider-example-draggable-ngx-slider-tutorial/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [ CSS Checkbox Generator](https://doodlenerd.com/html-control/css-checkbox-generator) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
@@ -115,7 +214,7 @@ const proudOfThisFunc = () => {
 - [Angular Material - Clipboard](https://material.angular.io/cdk/clipboard/overview) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 - [angular-range-slider-example-draggable-ngx-slider-tutorial](https://www.freakyjolly.com/angular-range-slider-example-draggable-ngx-slider-tutorial/) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [10 Best CSS button hover effects](https://alvarotrigo.com/blog/best-css-button-hover-effects/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 
 ## Author
@@ -127,5 +226,5 @@ const proudOfThisFunc = () => {
 
 ## Acknowledgments
 
-<!-- This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit. -->
+
 

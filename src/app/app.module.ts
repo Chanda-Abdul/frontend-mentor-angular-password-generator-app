@@ -7,13 +7,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { StrengthBarComponent } from './components/strength-bar/strength-bar.component';
 import { SliderComponent } from './components/slider/slider.component';
-import { PasswordGenerationService } from './passwordGeneration.service';
+import { PasswordDisplayComponent } from './components/password-display/password-display.component';
+import { CheckboxOptionsComponent } from './components/checkbox-options/checkbox-options.component';
+import { PasswordGenerationService } from './components/password-display/passwordGeneration.service';
+import { StrengthUpdateService } from './components/strength-bar/strengthUpdate.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     StrengthBarComponent,
-    SliderComponent
+    SliderComponent,
+    PasswordDisplayComponent,
+    CheckboxOptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -21,9 +26,11 @@ import { PasswordGenerationService } from './passwordGeneration.service';
     ClipboardModule,
     FormsModule,
     ReactiveFormsModule
-
   ],
-  providers: [PasswordGenerationService],
+  providers: [
+    PasswordGenerationService,
+    StrengthUpdateService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

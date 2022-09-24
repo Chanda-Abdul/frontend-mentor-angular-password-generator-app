@@ -8,28 +8,17 @@
 .custom-ngx-slider {
   height: 67px;
   width: 311px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include variables.flex-column;
  margin-bottom: 40px;
   padding: 5px;
-
-  // color: $lilac-murmur;
   font-size: 16px;
   font-weight: 700;
   line-height: 21px;
-
 }
-/* .ngx-slider {
-height: 67px;
-  width: 311px;
-} */
+
 .slider-label {
   width: 311px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+@include variables.flex-row;
 }
 
 .slider-label-value {
@@ -39,25 +28,11 @@ height: 67px;
   line-height: 42px;
 }
 
-/* .ngx-slider, .ngx-slider-selection{
-  color: $synthetic-mint;
-  visibility: visible !important;
-} */
-/* .ngx-slider .ngx-slider-pointer{
-  background-color: $lilac-murmur;
-} */
-
-::ng-deep.ngx-slider-span,
-.ngx-slider-pointer,
-.ngx-slider-pointer-min {
-  /* background-color: variables.$adventure-island-pink; */
-}
 
 .custom-ngx-slider,
 .ngx-slider,
 .ngx-slider-bar {
   background-color: variables.$synthetic-mint;
-  /* height: 5px; */
 }
 ::ng-deep.custom-ngx-slider.ngx-slider.ngx-slider-selection {
   color: variables.$synthetic-mint;
@@ -69,8 +44,7 @@ height: 67px;
   border-radius: 16px;
   width: 32px;
   height: 32px;
-  top: -14px; /* to remove the default positioning */
-  /* bottom: 0; */
+  top: -14px;
   background-color: variables.$lilac-murmur;
 }
 .custom-ngx-slider:hover .ngx-slider ::ng-deep.ngx-slider-pointer {
@@ -106,3 +80,19 @@ height: 67px;
 .ngx-slider-tick .ngx-slider-selected {
   background: variables.$black-russian;
 }
+
+/* Responsive Styles */
+@media screen and (min-width: 768px) {
+  .custom-ngx-slider {
+    height: 80px;
+    width: 493px;
+    padding: 10px;
+  }
+
+  .slider-label {
+    width: 473px;
+
+  }
+}
+
+@media screen and (min-width: 1440px) {}

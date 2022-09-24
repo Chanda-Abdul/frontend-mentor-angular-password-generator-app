@@ -4,60 +4,19 @@ h1 {
   color: variables.$purple-gunsmoke;
   @include variables.body-text;
   text-align: center;
-
 }
 
-.password {
-  height: 64px;
-  width: 323px;
+
+.interactive {
+  height: 70vh;
+  width: 343px;
+  @include variables.flex-column;
+  margin-top: 30px;
+  padding: 20px 10px;
   background-color: variables.$black-russian;
-  @include variables.flex-row;
-  padding: 0 20px;
 }
 
-.password-text {
-  @include variables.heading-m;
-  color: variables.$lilac-murmur;
-
-}
-
-.empty {
-  opacity: .25;
-}
-
-.filled {
-  opacity: 1;
-}
-
-
-svg.copy-icon {
-  fill: variables.$synthetic-mint;
-  margin-left: 10px;
-}
-
-svg.copy-icon:hover {
-  fill: variables.$lilac-murmur;
-}
-
-.copy-btn {
-  @include variables.body-text;
-  @include variables.flex-row;
-  background-color: transparent;
-  border: none;
-
-}
-
-.copy-btn>div {
-  color: variables.$synthetic-mint;
-}
-
-.copy-btn:hover>div,
-.copy-btn:hover>svg {
-  color: variables.$lilac-murmur;
-  fill: variables.$lilac-murmur;
-}
-
-/* button */
+/* button without glow on hover*/
 .btn-primary {
   margin: 25px;
   width: 311px;
@@ -76,91 +35,100 @@ svg.copy-icon:hover {
   border: 2px solid variables.$synthetic-mint;
 }
 
-.interactive {
-  height: fit-content;
-  width: 343px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 30px;
-  padding: 20px 10px;
-  background-color: variables.$black-russian;
-
+.btn-primary:hover>svg,
+.btn-primary:active>svg {
+  fill: variables.$synthetic-mint ;
 }
 
-
-/* checkbox */
-.control-group {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: space-between;
-  height: 132px;
-  width: 280px;
-  // margin-bottom: 20px;
-}
-
-.control {
-  display: block;
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 5px;
-  padding-top: 3px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.control input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  margin-left: 10px;
-}
-
-.control-indicator {
-  position: absolute;
-
-  top: 2px;
-  left: -10px;
-  height: 20px;
-  width: 20px;
-  background: variables.$black-russian;
-  border: 2px solid variables.$lilac-murmur;
-}
-
-.control:hover input~.control-indicator {
-  background: variables.$synthetic-mint;
-}
-
-.control input:checked~.control-indicator {
-  background: variables.$synthetic-mint;
-}
-
-.control-indicator:after {
-  box-sizing: unset;
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.control input:checked~.control-indicator:after {
-  display: block;
-}
-
-.control-checkbox .control-indicator:after {
-  left: 8px;
-  top: 4px;
-  width: 3px;
-  height: 8px;
-  border: solid variables.$black-russian;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
+/* button  glow on hover */
+// .btn-primary {
+//   margin: 25px;
+//   width: 311px;
+//   height: 56px;
+//   border: none;
+//   border: 2px solid variables.$synthetic-mint;
+//   background: variables.$river-styx ;
+//   color: variables.$synthetic-mint ;
+//   text-transform: uppercase;
+//   font-size: 18px;
+//   cursor: pointer;
+//   position: relative;
+//   z-index: 0;
+//   border-radius: 10px;
+// }
+//  .btn-primary:hover>svg,
+//  .btn-primary:active>svg {
+//   fill: variables.$synthetic-mint ;
+// }
 
 
+// .glow-on-hover:before {
+//   content: '';
+//   background: linear-gradient(45deg, variables.$synthetic-mint, variables.$adventure-island-pink, variables.$soaked-in-sun, variables.$synthetic-mint, variables.$error-red, variables.$infrared);
+//   position: absolute;
+//   top: -2px;
+//   left: -2px;
+//   background-size: 400%;
+//   z-index: -1;
+//   filter: blur(5px);
+//   width: calc(100% + 4px);
+//   height: calc(100% + 4px);
+//   animation: glowing 20s linear infinite;
+//   opacity: 0;
+//   transition: opacity .3s ease-in-out;
+//   border-radius: 10px;
+// }
 
+// .glow-on-hover:active {
+//   color: variables.$synthetic-mint;
+// }
+
+// .glow-on-hover:active:after {
+//   background: transparent;
+// }
+
+// .glow-on-hover:hover:before {
+//   opacity: 1;
+// }
+
+// .glow-on-hover:after {
+//   z-index: -1;
+//   content: '';
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   background: variables.$absence-of-light;
+//   left: 0;
+//   top: 0;
+//   border-radius: 10px;
+// }
+
+// @keyframes glowing {
+//   0% {
+//     background-position: 0 0;
+//   }
+
+//   50% {
+//     background-position: 400% 0;
+//   }
+
+//   100% {
+//     background-position: 0 0;
+//   }
+// }
 
 /* Responsive Styles */
-/* @media screen and (max-width: 575px) {
-} */
+@media screen and (min-width: 768px) {
+  .interactive {
+    width: 540px;
+    padding: 20px;
+  }
+
+  .btn-primary {
+    height: 65px;
+    width: 496px;
+    padding: 20px 40px;
+  }
+}
+
+@media screen and (min-width: 1440px) {}

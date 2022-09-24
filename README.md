@@ -33,30 +33,38 @@ Users should be able to:
   - [X] Desktop @ 1440px
 - [X] See hover and focus states for all interactive elements on the page
 
-##  Screenshots
+##
+###  Screenshots
 
-- <b> Mobile View @ `375px`</b>
-  - <b> `ngOnit` Initial Screen</b>
-  <img src="src/assets/screens/onInit.png" width="375" />
-   - <b> Valid Inputs</b>
- <img src="src/assets/screens/inactive.png" width="375" />
-   - <b> Invalid Inputs and Error Messages</b>
-    <img src="src/assets/screens/error.png" width="375" />
-    - <b> with Button and  📑  icon Hover States</b>
-  <img src="src/assets/screens/active.png" width="375" />
-  - <b> with 📑 copy  </b>
-   <img src="src/assets/screens/clip.png" width="375" />
+#### Mobile View @ `375px`
+
+##### `ngOnit` Initial Screen
+
+<img src="src/assets/screens/onInit.png" width="375" />
+  
+##### View with valid selections
+<img src="src/assets/screens/inactive.png" width="375" />
+
+##### Invalid Selection and Error Messages
+
+<img src="src/assets/screens/error.png" width="375" />
+
+##### "Generate" Button and "Copy" icon Hover States
+<img src="src/assets/screens/active.png" width="375" />
+
+##### After copying to clipboard  
+<img src="src/assets/screens/clip.png" width="375" />
  
-- <b> Tablet View @ `768px`</b> && <b> Desktop View @ `1440px`</b>
- <img src="src/assets/screens/desktop.png" width="768" />
+#### Tablet View @ `768px` && Desktop View @ `1440px`
+<img src="src/assets/screens/desktop.png" width="768" />
 
 
 
 
 ##  Links
 
-- Solution URL: [Add solution URL here](https://github.com/Chanda-Abdul/frontend-mentor-angular-password-generator-app)
-- Live Site URL: [Add live site URL here](https://stalwart-alpaca-aa2da3.netlify.app/)
+- Solution URL: [Click for Solution](https://github.com/Chanda-Abdul/frontend-mentor-angular-password-generator-app)
+- Live Site URL: [Click for Live Site](https://stalwart-alpaca-aa2da3.netlify.app/)
 
 ## My process
 This password generator was a fun and challenging to work on. great opportunity to use some new angular topics and implement some of algorithm knowledge.
@@ -81,9 +89,9 @@ I also started this project with most of my finctionality in one component.  But
     - <b>Service: </b>[`strengthUpdate.service.ts`](/src/app/components/strength-bar/strengthUpdate.service.ts)
     - handles the functionality that determines the strength of the password based on the <b>lowercase</b>, <b>uppercase</b>, <b>number</b> and <b>symbol</b> password input options
 
-#### Password Algorithms
+### Password Algorithms
 I realized that I would need to create two separate algorithms,   one algorithm to generate a password and another algorithm to determine the passwords' strength.
-##### Password Generator Alogirthm
+#### Password Generator Algorithm
 
   When I initially started to think of ways to generate a password I considered something like 
   `.charCodeAt()`
@@ -116,9 +124,9 @@ I realized that I would need to create two separate algorithms,   one algorithm 
  - `lowerChars` = <b>O(26)</b>
  - `symbolChars` = <b>O(12)</b>
  - `numChars`= <b>O(10)</b>
- - ? `availableChars`= <b>O(1)</b>
- - ?`currentCharCount`= <b>O(1)</b>
- - ? `password`= <b>O(1)</b>
+ - ❓ `availableChars`= <b>O(1)</b>
+ - ❓`currentCharCount`= <b>O(1)</b>
+ - ❓`password`= <b>O(1)</b>
 
  - <b>Total Space = O(77) or O(N)</b>
 
@@ -142,10 +150,10 @@ I realized that I would need to create two separate algorithms,   one algorithm 
   }
 ```
  - <b>Total Time = O(N)</b> because of the `for` loop 
-#### Password Strength Algorithm
+### Password Strength Algorithm
 
 
-### Built with
+## Built with
 
 - <b>[Angular](https://angular.io/)</b> (<b>JavaScript</b> framework)
   - [Angular Material](https://material.angular.io/)
@@ -157,7 +165,7 @@ I realized that I would need to create two separate algorithms,   one algorithm 
 - <b>Figma</b>
 
 ## What I learned
-
+- Semantic Input
 - I used [Angular Material - Clipboard](https://material.angular.io/cdk/clipboard/overview) to copy the generated password the users clipboard. `setTimeout()` is to reset the styling 5 seconds after copying the password.
 
   ```js
@@ -201,8 +209,9 @@ const proudOfThisFunc = () => {
 
 ##  Continued development
 
-- finish slider styling
-- update strength level based on character length
+- [ ] disable "generate" button if no inputs are selected
+- [ ] finish slider styling
+- [ ]update strength level based on character length
 
 
 ## Useful resources

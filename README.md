@@ -18,7 +18,7 @@ This is a solution to the [Password generator app challenge on Frontend Mentor](
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-## Overview
+# Overview
 
 ## The challenge
 
@@ -33,33 +33,29 @@ Users should be able to:
   - [X] Desktop @ 1440px
 - [X] See hover and focus states for all interactive elements on the page
 
-##
-###  Screenshots
+##  Screenshots
 
-#### Mobile View @ `375px`
+### Mobile View @ `375px`
 
-##### `ngOnit` Initial Screen
+#### `ngOnit` Initial Screen
 
 <img src="src/assets/screens/onInit.png" width="375" />
   
-##### View with valid selections
+#### View with valid selections
 <img src="src/assets/screens/inactive.png" width="375" />
 
-##### Invalid Selection and Error Messages
+#### Invalid Selection and Error Messages
 
 <img src="src/assets/screens/error.png" width="375" />
 
-##### "Generate" Button and "Copy" icon Hover States
+#### "Generate" Button and "Copy" icon Hover States
 <img src="src/assets/screens/active.png" width="375" />
 
-##### After copying to clipboard  
+#### After copying to clipboard  
 <img src="src/assets/screens/clip.png" width="375" />
  
-#### Tablet View @ `768px` && Desktop View @ `1440px`
+### Tablet View @ `768px` && Desktop View @ `1440px`
 <img src="src/assets/screens/desktop.png" width="768" />
-
-
-
 
 ##  Links
 
@@ -211,7 +207,7 @@ const proudOfThisFunc = () => {
 
 - [ ] disable "generate" button if no inputs are selected
 - [ ] finish slider styling
-- [ ]update strength level based on character length
+- [ ] update strength level based on character length
 
 
 ## Useful resources
